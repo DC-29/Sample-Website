@@ -1,0 +1,36 @@
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/index.css">
+        <title>Login</title>
+</head>
+<body>
+
+<canvas id="gradient-canvas" style="top: -25%;"></canvas>
+<% if (messages.error) { %>
+        <%= messages.error %>
+<% } %>
+
+<div class="hero">
+<div class="content">
+<h1>Register</h1>
+
+<form action="/register" method="post" style="margin-top: var(--l-spacing);">
+    
+        <label for="username">Username</label>
+        <input type="text" name="username" id="name" minlength="5" maxlength="20" required><br><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&]).{8,}" required ><br><br>
+
+        <input type="submit" name="" id="" class="std-btn arrow-btn">
+    
+</form>
+
+<a href="/login" class="arrow-a" style="padding-left: 0; margin-left: 0;">Go to login</a>
+<script src="/js/gradient.js"></script>
+</div>
+</div>
+</body>

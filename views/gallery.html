@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Products</title>
+</head>
+<body>
+    <canvas id="gradient-canvas" style="top: -10%;"></canvas>
+    <nav class="navbar">
+        <div class="content">
+            <div class="nav-wrapper">
+        <img src="/assets/logo-white.svg" alt="Swipe Logo">
+        <ul>
+            <li><a href="">Products</a></li>
+            <li><a href="">Solutions</a></li>
+            <li><a href="">Developers</a></li>
+            <li><a href="">Resources</a></li>
+            <li><a href="">Pricing</a></li>
+        </ul>
+        <% if (user != null) {%>
+            <a href="/logout" style="text-decoration: none;"><p class="std-btn nav-btn logout-btn" style="transition: none;"><span id="a"><%= user %></span><span id="b">Log Out</span></p></a>
+            
+        <% } else { %>
+            <a href="/login"><button  class="std-btn nav-btn" id="login-btn">Sign In</button></a>
+            
+        <% }%>
+        
+    </div></div></nav>
+
+    <div class="hero">
+        <div class="content">
+            <h1>Products</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div class="two-column-layout">
+        <div class="left"> 
+            <% for (let i = 0 ; i < (files.length/2) ; i++) { %>
+                <img src="/product/<%= files[i] %>" class="api-demonstration">
+            <% } %>
+        </div>
+        <div class="right">
+            <% for (let i = files.length/2 ; i < files.length ; i++) { %>
+                <img src="/product/<%= files[i] %>" class="api-demonstration">
+            
+            <% } %>
+        </div>
+    </div>
+    </div>
+
+    <script src="/js/gradient.js"></script>
+
+</body>
+</html>
